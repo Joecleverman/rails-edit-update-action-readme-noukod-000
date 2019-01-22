@@ -20,12 +20,12 @@ class PostsController < ApplicationController
 	end
 
 	def edit
-     @article = Article.find(params[:id])
-  end
+		@post = Post.find(params[:id])
+	end
 
-  def update
-    @article = Article.find(params[:id])
-    @article.update(title: params[:title], description: params[:description])
-    redirect_to article_path(@article)
-  end
+	def update
+		@post = Post.find(params[:id])
+		@post.update(title: params[:title], description: params[:description])
+		redirect_to post_path(@post)
+	end
 end
